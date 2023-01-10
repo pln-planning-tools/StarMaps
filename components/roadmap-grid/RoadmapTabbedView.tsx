@@ -6,12 +6,14 @@ import {
   TabList,
   TabPanel,
   TabPanels,
-  Tabs
+  Tabs,
+  Flex
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { ReactElement } from 'react-markdown/lib/react-markdown';
 
+import { TodayMarkerToggle } from './today-marker-toggle';
 import { setViewMode, useViewMode } from '../../hooks/useViewMode';
 import { DEFAULT_INITIAL_VIEW_MODE } from '../../lib/defaults';
 import { ViewMode } from '../../lib/enums';
@@ -76,14 +78,19 @@ export function RoadmapTabbedView({
     <>
       <Box className={styles.timelineBox}>
         <Header issueDataState={issueDataState} />
-        <Tabs variant='unstyled' onChange={handleTabChange} index={tabIndexFromViewMode} isLazy>
-          <TabList>
-            {tabs.map(renderTab)}
-          </TabList>
-          <TabPanels>
-            {tabs.map(renderTabPanel)}
-          </TabPanels>
-        </Tabs>
+        <Flex align="center" justify="space-between">
+          <Tabs variant='unstyled' onChange={handleTabChange} index={tabIndexFromViewMode} isLazy>
+            <TabList display="flex" alignItems="center" justifyContent="space-between">
+              <Flex>
+                {tabs.map(renderTab)}
+              </Flex>
+              <TodayMarkerToggle />
+            </TabList>
+            <TabPanels>
+              {tabs.map(renderTabPanel)}
+            </TabPanels>
+          </Tabs>
+        </Flex>
       </Box>
     </>
   );
