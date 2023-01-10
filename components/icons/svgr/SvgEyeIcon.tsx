@@ -6,7 +6,7 @@ interface SvgEyeIconProps {
   height: number
 }
 
-const SvgEyeIcon = ({eyeOpen, width=22, height=22}:SvgEyeIconProps) => {
+const SvgEyeIcon = ({ eyeOpen, width=22, height=22 }:SvgEyeIconProps) => {
   if (!eyeOpen) return (
     <svg width={`${width}`} height={`${height}`} viewBox={`0 0 ${width} ${height}`} fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M3.55249 4.48853L19.3025 16.7385" stroke="#8D8D8D" stroke-linecap="round" stroke-linejoin="round"/>
