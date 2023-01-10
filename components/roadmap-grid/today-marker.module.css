@@ -83,6 +83,12 @@
 .todayMarkerToggleDisabled:hover {
   background: #F9FCFF;
   border: 1px solid #EFEFEF;
+  color: #8D8D8D;
+}
+
+.todayMarkerToggle:hover svg path,
+.todayMarkerToggleDisabled:hover svg path {
+  stroke: #8D8D8D;
 }
 
 .todayMarkerToggleDisabled {
@@ -90,14 +96,3 @@
   border: 1px solid #EFEFEF;
   color: #8D8D8D;
 }
-
-/* .todayMarkerToggleText {
-  color: #4987BD;
-}
-
-.todayMarkerToggleText
-
-.todayMarkerToggleText.disabled {
-  color: #8D8D8D;
-
-} */
